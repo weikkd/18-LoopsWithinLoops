@@ -202,7 +202,7 @@ def alternating_brackets(m, n):
     Precondition:  m and n are positive integers with m >= n.
     """
     # ------------------------------------------------------------------
-    # TODO: 5. Implement and test this function.
+    # DONE: 5. Implement and test this function.
     #          Some tests are already written for you (above).
     #
     # IMPLEMENTATION RESTRICTION:
@@ -214,7 +214,6 @@ def alternating_brackets(m, n):
     for k in range(m, n-1, -1):
         for j in range(k):
             print('[', end='')
-            print(']', end='')
         print()
 
 
