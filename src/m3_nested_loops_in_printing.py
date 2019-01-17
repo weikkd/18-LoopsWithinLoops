@@ -211,6 +211,12 @@ def alternating_brackets(m, n):
     #   would defeat the goal of providing practice at loops within loops.
     # ------------------------------------------------------------------
 
+    for k in range(m, n-1, -1):
+        for j in range(k):
+            print('[', end='')
+            print(']', end='')
+        print()
+
 
 def run_test_triangle_same_number_in_each_row():
     """ Tests the    triangle_same_number_in_each_row    function. """
@@ -254,6 +260,11 @@ def triangle_same_number_in_each_row(r):
     #   would defeat the goal of providing practice at loops within loops.
     # ------------------------------------------------------------------
 
+    for k in range(r):
+        for j in range(k+1):
+            print(j, end='')
+        print()
+
 
 def run_test_triangle_all_numbers_in_each_row():
     """ Tests the    triangle_all_numbers_in_each_row    function. """
@@ -288,7 +299,7 @@ def triangle_all_numbers_in_each_row(r):
     Precondition:  r is a non-negative integer.
     """
     # ------------------------------------------------------------------
-    # TODO: 7. Implement and test this function.
+    # DONE: 7. Implement and test this function.
     #          Some tests are already written for you (above).
     #
     # IMPLEMENTATION RESTRICTION:
@@ -296,6 +307,11 @@ def triangle_all_numbers_in_each_row(r):
     #   in this or the other problems in this module, as doing so
     #   would defeat the goal of providing practice at loops within loops.
     # ------------------------------------------------------------------
+
+    for k in range(r+1):
+        for j in range(1, k+1):
+            print(j, end='')
+        print()
 
 
 # ----------------------------------------------------------------------
