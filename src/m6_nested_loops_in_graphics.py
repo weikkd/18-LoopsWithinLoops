@@ -11,11 +11,11 @@ import rosegraphics as rg
 
 def main():
     """ Calls the other functions to demonstrate them. """
-    run_test_draw_L()
+    run_test_draw_l()
     run_test_draw_wall_on_right()
 
 
-def run_test_draw_L():
+def run_test_draw_l():
     """
     Demonstrates nested loops in a TWO-DIMENSIONAL GRAPHICS example.
     """
@@ -38,7 +38,7 @@ def run_test_draw_L():
     green_circle = starting_circle.clone()
     green_circle.fill_color = 'green'
 
-    draw_L(window, green_circle, 10, 5)
+    draw_l(window, green_circle, 10, 5)
     window.continue_on_mouse_click('Click to run Test 2.')
 
     # ------------------------------------------------------------------
@@ -49,12 +49,12 @@ def run_test_draw_L():
     blue_circle.fill_color = 'blue'
 
     window.continue_on_mouse_click('Click to run Test 2.')
-    draw_L(window, blue_circle, 6, 15)
+    draw_l(window, blue_circle, 6, 15)
 
     window.close_on_mouse_click()
 
 
-def draw_L(window, circle, r, c):
+def draw_l(window, circle, r, c):
     """
     See   L.pdf   in this project for pictures that may
     help you better understand the following specification:
@@ -101,7 +101,6 @@ def draw_L(window, circle, r, c):
         x = og_x
 
 
-
 def run_test_draw_wall_on_right():
     """ Tests the    draw_wall_on_right    function. """
     # Tests 1 and 2 are ALREADY DONE (here).
@@ -141,6 +140,28 @@ def draw_wall_on_right(rectangle, n, window):
     # TODO: 3. Implement and test this function.
     #     The testing code is already written for you (above).
     # ------------------------------------------------------------------
+
+    og_corn1x = rectangle.corner_1.x
+    og_corn1y = rectangle.corner_1.y
+    og_corn2x = rectangle.corner_2.x
+    og_corn2y = rectangle.corner_2.y
+
+    corn1x = og_corn1x
+    corn1y = og_corn1y
+    corn2x = og_corn2x
+    corn2y = og_corn2y
+
+    for j in range(n):
+        for _ in range(j + 1):
+            new_rect = rg.Rectangle(rg.Point(corn1x, corn1y), rg.Point(corn2x, corn2y))
+            new_rect.attach_to(window)
+            window.render(0.1)
+            corn1x = corn1x - corn1x
+            corn2x = corn2x - corn2x
+        corn1y = corn1y + .5*corn1y
+        corn2y = corn2y + .5*corn2y
+        corn1x = og_corn1x
+        corn2x = og_corn2x
 
 
 # ----------------------------------------------------------------------
